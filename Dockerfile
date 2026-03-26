@@ -3,6 +3,9 @@ FROM node:22-alpine
 
 WORKDIR /app
 
+# 安装ffmpeg用于视频转码
+RUN apk add --no-cache ffmpeg
+
 # 复制package.json
 COPY package.json package-lock.json* ./
 
@@ -13,7 +16,7 @@ RUN npm ci --omit=dev
 COPY . .
 
 # 创建存储目录
-RUN mkdir -p /app/storage/photos /app/storage/videos
+RUN mkdir -p /app/storage/photos /app/storage/videos /app/storage/thumbnails
 
 # 暴露端口
 EXPOSE 30000
