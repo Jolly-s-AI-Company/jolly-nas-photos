@@ -1,0 +1,14 @@
+{
+  "name": "jolly-nas-photos",
+  "version": "1.0.0",
+  "description": "Jolly NAS照片视频备份服务",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1",
+    "fs-extra": "^11.2.0"
+  }
+}

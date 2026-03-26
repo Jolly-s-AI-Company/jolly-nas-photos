@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  jolly-nas:
+    build: .
+    ports:
+      - "30000:30000"
+    volumes:
+      - nas-data:/app/storage
+    environment:
+      - PORT=30000
+      - STORAGE_PATH=/app/storage
+    restart: unless-stopped
+
+volumes:
+  nas-data:
